@@ -1,0 +1,31 @@
+#header {
+  background-color: aliceblue;
+  color: rgb(3, 0, 61);
+  padding: 20px;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    .logo {
+      .react-logo {
+        width: 50px;
+      }
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 80px;
+      ul {
+        display: flex;
+        list-style: none;
+        li {
+          margin: 0 20px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
