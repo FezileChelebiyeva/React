@@ -1,0 +1,17 @@
+.calculator {
+  .calc {
+    width: 200px;
+    height: 20px;
+    border: 1px solid black;
+    margin-left: 10px;
+  }
+  .coutns {
+    display: flex;
+    margin-top: 20px;
+    button {
+      width: 20px;
+      border: 1px solid black;
+      margin-left: 10px;
+    }
+  }
+}

@@ -1,15 +1,12 @@
-// import logo from './logo.svg';
 import "./App.css";
-import Header from "./company/header/header";
-import Section from "./company/section/section";
-import Footer from "./company/footer/footer";
+import Calculator from "./company/calculator";
+// import Counter from "./company/counter";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Section />
-      <Footer />
+      {/* <Counter /> */}
+      <Calculator />
     </div>
   );
 }
