@@ -1,0 +1,37 @@
+.container {
+  max-width: 1000px;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .calculator {
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(58, 57, 57);
+}
+.container .calculator .results {
+  margin: 10px;
+  outline: 0;
+  border: 0;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: end;
+  width: 300px;
+  padding-top: 200px;
+}
+.container .calculator .calc {
+  width: 320px;
+  margin-left: 2px;
+}
+.container .calculator .calc button {
+  font-size: 18px;
+  outline: 0;
+  border: 1px solid rgb(207, 207, 207);
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+}
+.container .calculator .calc button:hover {
+  background-color: rgb(191, 194, 197);
+}/*# sourceMappingURL=index.css.map */

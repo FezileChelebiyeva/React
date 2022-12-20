@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import Calculator from "./company/calculator";
 // import Counter from "./company/counter";
 
