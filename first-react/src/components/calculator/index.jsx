@@ -3,7 +3,6 @@ import { useState } from "react";
 import "./index.scss";
 const Calculator = () => {
   let [count, setCount] = useState("");
-  let btn = document.querySelectorAll("button");
   return (
     <div className="container">
       <div className="calculator">
