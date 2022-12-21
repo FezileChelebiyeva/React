@@ -8,12 +8,16 @@ const DataComp = () => {
   const [editId, seteditId] = useState("");
   const nameIn = useRef();
   const emailIn = useRef();
+
+  // delete function
   const handleDelete = (e) => {
     let updateUsers = usersData.filter(
       (elem) => elem.id != e.target.parentElement.parentElement.id
     );
     setUsersData(updateUsers);
   };
+
+  // edit function
   const handleEdit = (e) => {
     seteditId(e.target.parentElement.parentElement.id);
     usersData.forEach((element) => {
@@ -23,18 +27,10 @@ const DataComp = () => {
       }
     });
   };
+
+  // then edit submit function
   const handleSubmit = (e) => {
     e.preventDefault();
-    let editObj = {
-      name: nameIn.current.value,
-      email: emailIn.current.value,
-    };
-    // console.log(editObj);
-
-    // console.log(editId);
-    let findData = usersData.find((el) => editId == el.id);
-    console.log(findData);
-
     usersData.forEach((el) => {
       if (el.id == editId) {
         el.name = nameIn.current.value;
@@ -43,6 +39,22 @@ const DataComp = () => {
     });
     setUsersData([...usersData]);
   };
+  let arrayUsers = JSON.parse(localStorage.getItem("Users")) || [];
+  // array add local strg
+  const addLocalStorages = (e) => {
+    usersData.forEach((el) => {
+      if (el.id == e.target.parentElement.parentElement.id) {
+        let usersObj = {
+          id: el.id,
+          name: el.name,
+          email: el.email,
+        };
+        arrayUsers.push(usersObj);
+        localStorage.setItem("Users", JSON.stringify(arrayUsers));
+      }
+    });
+  };
+
   return (
     <div style={{ display: "flex", columnGap: "60px" }}>
       <table>
@@ -77,7 +89,12 @@ const DataComp = () => {
                   </button>
                 </td>
                 <td>
-                  <button className="addBtn">Add</button>
+                  <button
+                    className="addBtn"
+                    onClick={(e) => addLocalStorages(e)}
+                  >
+                    Add
+                  </button>
                 </td>
               </tr>
             );
@@ -86,15 +103,28 @@ const DataComp = () => {
       </table>
       <form>
         <div>
+          <h1>Edit Table</h1>
           <div>
             <label htmlFor="name">Name:</label>
-            <input ref={nameIn} type="text" />
+            <input
+              ref={nameIn}
+              type="text"
+              id="name"
+              placeholder="edit name..."
+            />
           </div>
           <div>
             <label htmlFor="email">Email:</label>
-            <input ref={emailIn} type="email" />
+            <input
+              ref={emailIn}
+              type="email"
+              id="email"
+              placeholder="edit email..."
+            />
           </div>
-          <button onClick={(e) => handleSubmit(e)}>Submit</button>
+          <button className="submitBtn" onClick={(e) => handleSubmit(e)}>
+            Submit
+          </button>
         </div>
       </form>
     </div>
