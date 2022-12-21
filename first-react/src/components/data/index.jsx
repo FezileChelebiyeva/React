@@ -29,10 +29,19 @@ const DataComp = () => {
       name: nameIn.current.value,
       email: emailIn.current.value,
     };
-    console.log(editObj);
+    // console.log(editObj);
 
-    console.log(editId);
-    let findData = usersData.find((el) => editId !== el.id)
+    // console.log(editId);
+    let findData = usersData.find((el) => editId == el.id);
+    console.log(findData);
+
+    usersData.forEach((el) => {
+      if (el.id == editId) {
+        el.name = nameIn.current.value;
+        el.email = emailIn.current.value;
+      }
+    });
+    setUsersData([...usersData]);
   };
   return (
     <div style={{ display: "flex", columnGap: "60px" }}>
@@ -68,9 +77,7 @@ const DataComp = () => {
                   </button>
                 </td>
                 <td>
-                  <button className="addBtn" >
-                    Add
-                  </button>
+                  <button className="addBtn">Add</button>
                 </td>
               </tr>
             );
