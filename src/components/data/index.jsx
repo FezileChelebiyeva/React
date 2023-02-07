@@ -4,6 +4,7 @@ import { useState } from "react";
 import { users } from "./data.js";
 import "./index.scss";
 const DataComp = () => {
+  // const [usersData, setUsersData] = useState(users);
   const [usersData, setUsersData] = useState(users);
   const [editId, seteditId] = useState("");
   const nameIn = useRef();
@@ -39,7 +40,7 @@ const DataComp = () => {
     });
     setUsersData([...usersData]);
   };
-  let arrayUsers = JSON.parse(localStorage.getItem("Users")) || [];
+
   // array add local strg
   const addLocalStorages = (e) => {
     usersData.forEach((el) => {
@@ -49,12 +50,13 @@ const DataComp = () => {
           name: el.name,
           email: el.email,
         };
-        arrayUsers.push(usersObj);
-        localStorage.setItem("Users", JSON.stringify(arrayUsers));
+        let array = JSON.parse(localStorage.getItem("Users")) ?? [];
+        !array.some((el) => el.id == usersObj.id)
+          ? localStorage.setItem("Users", JSON.stringify([...array, usersObj]))
+          : alert("you did");
       }
     });
   };
-
   return (
     <div style={{ display: "flex", columnGap: "60px" }}>
       <table>
@@ -93,7 +95,7 @@ const DataComp = () => {
                     className="addBtn"
                     onClick={(e) => addLocalStorages(e)}
                   >
-                    Add
+                    Add Local
                   </button>
                 </td>
               </tr>
