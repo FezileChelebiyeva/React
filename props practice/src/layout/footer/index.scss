@@ -1,0 +1,66 @@
+div {
+  footer {
+    margin-top: 100px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    .links {
+      p {
+        margin-left: 38px;
+      }
+      nav {
+        ul {
+          text-align: center;
+          list-style: none;
+          li {
+            a {
+              text-decoration: none;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+    .form {
+      text-align: center;
+      input {
+        width: 300px;
+        text-align: center;
+        padding: 10px 0;
+        outline: 0;
+        border: 0;
+        border-radius: 5px;
+      }
+      button {
+        margin-top: 30px;
+        border: 1px solid white;
+        background-color: black;
+        color: white;
+        border-radius: 15px;
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+    }
+    .contact {
+      text-align: center;
+      .text {
+        p {
+          margin: 0;
+          font-size: 13px;
+        }
+      }
+      .icons {
+        margin-top: 16px;
+        display: flex;
+        justify-content: center;
+        column-gap: 20px;
+        color: white;
+        i {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

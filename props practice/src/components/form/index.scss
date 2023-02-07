@@ -1,0 +1,81 @@
+div {
+  #form {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    form {
+      background: white;
+      padding: 30px 60px;
+      h2 {
+        font-weight: 900;
+        font-size: 20px;
+      }
+      .nameAndEmail {
+        display: flex;
+        column-gap: 30px;
+        p {
+          font-size: 13px;
+          margin: 0;
+        }
+        input {
+          width: 198px;
+          margin-top: 10px;
+          height: 20px;
+          padding: 5px 10px;
+          border: 0;
+          background-color: rgb(234, 239, 243);
+          outline: 0;
+        }
+      }
+      .btn {
+        text-align: center;
+        margin-top: 20px;
+        .submitBtn {
+          background-image: linear-gradient(
+            to left,
+            rgb(18, 156, 18),
+            rgb(52, 52, 247)
+          );
+          border: 0;
+          color: white;
+          font-weight: 700;
+          padding: 8px 15px;
+          cursor: pointer;
+        }
+      }
+      .website {
+        margin-top: 30px;
+        input {
+          width: 450px;
+          margin-top: 10px;
+          height: 20px;
+          padding: 10px;
+          border: 0;
+          outline: 0;
+          background-color: rgb(234, 239, 243);
+        }
+      }
+      .message {
+        margin-top: 30px;
+        textarea {
+          margin-top: 10px;
+          padding: 5px 10px;
+          border: 0;
+          background-color: rgb(234, 239, 243);
+          outline: 0;
+        }
+      }
+      p {
+        font-size: 13px;
+        margin: 0;
+      }
+    }
+  }
+  .textFooter {
+    margin-top: 80px;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+  }
+}
